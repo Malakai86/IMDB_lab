@@ -28,12 +28,10 @@ def save()
   end
 
 
-
-
-
-
-
-
+  def self.map_items(movie_data)
+    result = movie_data.map{|movie| Movie.new(movie_data)}
+    return result
+  end
 
 
 end

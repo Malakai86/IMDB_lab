@@ -19,3 +19,38 @@ star3 = Star.new({
   "last_name" => "Lemon"
   })
 star3.save()
+
+movie1 = Movie.new({
+  "title" => "A James Bond movie"
+  "genre" => "Action"
+  })
+movie1.save()
+movie2 = Movie.new({
+  "title" => "A Mickey Mouse movie"
+  "genre" => "Animation"
+  })
+movie2.save()
+movie3 = Movie.new({
+  "title" => "When life gives you Liz"
+  "genre" => "Romcom"
+  })
+movie3.save()
+
+casting1 = Casting.new({
+  "movie_id" => movie1.id
+  "star_id" => star2.id
+  "fee" => 100
+  })
+  casting1.save()
+casting2 = Casting.new({
+  "movie_id" => movie2.id
+  "star_id" => star1.id
+  "fee" => 500
+  })
+  casting2.save()
+casting3 = Casting.new({
+  "movie_id" => movie3.id
+  "star_id" => star3.id
+  "fee" => 333
+  })
+  casting2.save()
