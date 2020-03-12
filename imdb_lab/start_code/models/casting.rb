@@ -13,7 +13,7 @@ def initialize(options)
 end
 
 def save()
-  sql = "INSERT INTO casting
+  sql = "INSERT INTO castings
   (
   movie_id,
   star_id,
@@ -25,11 +25,18 @@ def save()
   )
   RETURNING id"
   values =[@movie_id, @star_id, @fee]
-  movie = SqlRunner.run(sql, values)[0]
+  casting = SqlRunner.run(sql, values)[0]
   @id = casting['id'].to_i
 end
 
 def self.map_items(casting_data)
   result = casting_data.map{|casting| Casting.new(casting_data)}
   return result
+end
+
+def self.delete_all()
+  sql = "DELETE FROM castings"
+  SqlRunner.run(sql)
+end
+
 end

@@ -33,5 +33,9 @@ def save()
     return result
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM movies"
+    SqlRunner.run(sql)
+  end
 
 end
